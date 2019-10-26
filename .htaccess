@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# redirect www pages to non www page
+RewriteCond %{HTTP_HOST} ^www.pong-2.com [NC]
+RewriteRule ^(.*)$ https://pong-2.com/$1 [L,R=301]
+
+# redirect html pages to the root domain
+RewriteRule ^index\.html$ / [NC,R,L]
